@@ -42,7 +42,7 @@ print(intro)
 response = requests.get("https://benbotfn.tk/api/v1/status")
 patch = response.json()["currentFortniteVersion"]
 
-print(f'\n A free lobbybot network, created by KaosDrip. Fixed by Aspect#0002 for Patch {patch}.\n')
+print(f'\n nte ist Cool{patch}.\n')
 
 def lenPartyMembers():
     members = client.party.members
@@ -142,7 +142,7 @@ async def event_device_auth_generate(details, email):
 async def event_ready():
     os.system('cls||clear')
     print(intro)
-    print(Fore.GREEN + ' [+] ' + Fore.RESET + 'Client ready as ' + Fore.LIGHTGREEN_EX + f'{client.user.display_name}')
+    print(Fore.GREEN + ' [+] ' + Fore.RESET + 'Dein Bot ist Online als ' + Fore.LIGHTGREEN_EX + f'{client.user.display_name}')
 
     member = client.party.me
 
@@ -301,9 +301,7 @@ async def event_command_error(ctx, error):
     else:
         print(error)                  
 
-@commands.dm_only()
 @client.command()
-@commands.dm_only()
 async def skin(ctx, *, content = None):
     if content is None:
         await ctx.send(f'No skin was given, try: {prefix}skin (skin name)')
@@ -323,9 +321,7 @@ async def skin(ctx, *, content = None):
         except BenBotAsync.exceptions.NotFound:
             await ctx.send(f'Could not find a skin named: {content}')
 
-@commands.dm_only()
 @client.command()
-@commands.dm_only()
 async def backpack(ctx, *, content = None):
     if content is None:
         await ctx.send(f'No backpack was given, try: {prefix}backpack (backpack name)')
@@ -349,7 +345,6 @@ async def backpack(ctx, *, content = None):
         except BenBotAsync.exceptions.NotFound:
             await ctx.send(f'Could not find a backpack named: {content}')
 
-@commands.dm_only()
 @client.command()
 async def emote(ctx, *, content = None):
     if content is None:
@@ -384,7 +379,6 @@ async def emote(ctx, *, content = None):
         except BenBotAsync.exceptions.NotFound:
             await ctx.send(f'Could not find an emote named: {content}')
 
-@commands.dm_only()
 @client.command()
 async def pickaxe(ctx, *, content = None):
     if content is None:
@@ -406,7 +400,6 @@ async def pickaxe(ctx, *, content = None):
         except BenBotAsync.exceptions.NotFound:
             await ctx.send(f'Could not find a pickaxe named: {content}')
 
-@commands.dm_only()
 @client.command()
 async def pet(ctx, *, content = None):
     if content is None:
@@ -428,7 +421,6 @@ async def pet(ctx, *, content = None):
         except BenBotAsync.exceptions.NotFound:
             await ctx.send(f'Could not find a pet named: {content}')
 
-@commands.dm_only()
 @client.command()
 async def emoji(ctx, *, content = None):
     if content is None:
