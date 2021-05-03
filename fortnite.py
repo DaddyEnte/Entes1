@@ -765,7 +765,7 @@ async def itemshop(ctx):
 
     await client.party.me.clear_emote()
     
-    await ctx.send("Done!")
+    await ctx.send("Das war der Itemshop UND JETZT CREATORCODE: 21.ENTE !")
 
     await asyncio.sleep(1.5)
 
@@ -1095,9 +1095,9 @@ async def hide(ctx, *, user = None):
 
                 await ctx.send(f"Hid {member.display_name}")
             except AttributeError:
-                await ctx.send("I could not find that user.")
+                await ctx.send("Diesen Lappen finde ich nicht :/.")
             except fortnitepy.HTTPException:
-                await ctx.send("I am not party leader.")
+                await ctx.send("GIB DOCH ADMIN DU ESEL.")
         else:
             try:
                 await set_and_update_party_prop(
@@ -1121,10 +1121,10 @@ async def hide(ctx, *, user = None):
 @commands.dm_only()
 @client.command()
 @is_admin()
-async def unhide(ctx: fortnitepy.ext.commands.Context, *, username = None):
+async def unhide(ctx):
     if client.party.me.leader:
-        user = await client.fetch_user(ctx.author.display_name)
-        member = client.party.get_member(user.id)
+        user = await client.fetch_profile(ctx.message.author.id)
+        member = client.party.members.get(user.id)
 
         await member.promote()
 
